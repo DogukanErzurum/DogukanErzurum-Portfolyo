@@ -1,0 +1,782 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    /*===== Colors =====*/
+    --hue-color:242;
+
+    /* HSL Color Mode */
+    --skin-color: hsl(342, 92%, 46%);
+    --title-color: hsl(var(--hue-color), 8%, 95%);
+    --text-color: hsl(var(--hue-color), 8%, 85%);
+    --body-color: hsl(var(--hue-color), 19%, 5%);
+    --box-color: hsl(var(--hue-color), 14%, 10%);
+    --scroll-bar-color: hsl(var(--hue-color), 12%, 38%);
+    --scroll-thumb-color: hsl(var(--hue-color), 12%, 26%);
+
+    /*===== Font and Typography =====*/
+    --body-font: 'Poppins', sans-serif;
+
+    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+    --biggest-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+
+    /*===== Font Weight =====*/
+    --font-medium: 500;
+    --font-bold: 600;
+
+    /*===== Margenes Bottom =====*/
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+    /*===== Z Index =====*/
+    --z-fixed: 10;
+    --z-modal: 100;
+}
+
+/* Responsive Typography */
+@media screen and (max-width: 1024px) {
+    :root {
+        --biggest-font-size: 32px;
+        --h1-font-size: 24px;
+        --h2-font-size: 20px;
+        --h3-font-size: 18px;
+        --normal-font-size: 15px;
+        --small-font-size: 13px;
+        --smaller-font-size: 12px;
+    }
+}
+
+/*=============== BASE ===============*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+button,
+input {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+body {
+    background-color: var(--body-color);
+    color: var(--text-color);
+}
+
+h1, h2, h3 {
+    color: var(--title-color);
+    font-weight: var(--font-bold);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    cursor: pointer;
+}
+
+button,
+input {
+    border: none;
+    outline: none;
+}
+
+/*=============== LAYOUT ===============*/
+.container {
+    max-width: 1250px;
+    margin-left: 25px;      
+    margin-right: auto;
+}
+
+.grid {
+    display: grid;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.section__title {
+    text-align: center;
+    font-size: var(--h1-font-size);
+    margin-bottom: var(--mb-3);
+}
+
+.section__title::before {
+    content: attr(data-heading);
+    display: block;
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-medium);
+    color: var(--skin-color);
+}
+/*=============== SIDEBAR ===============*/
+.sidebar {
+    position: fixed;
+    width: 100px;
+    height: 100vh;
+    background-color: var(--body-color);
+    border-right: 1px solid var(--box-color);
+
+}
+
+.nav__logo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 1.8rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--skin-color);
+    text-align: center;
+    margin: auto;
+}
+
+.nav__logo-text {
+    font-size: 18px;
+    color: var(--title-color);
+    font-weight: var(--font-bold);
+    line-height: 40px;
+}
+
+.nav__menu {
+    position: fixed;
+    transform: rotate(-90deg) translateX(-100%);
+    transform-origin: left top;
+    width: 100vh;  /* viewport height (görünüm alanı yüksekliği) genişliği göürünüm alanının yüksekliğine eşit yaptım. */
+}
+
+.menu {
+    display: flex;
+}
+
+.nav__list {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: -2px auto 0 auto;
+}
+
+.nav__link {
+    float: right;
+    height: 100%;
+    line-height: 100px;
+    padding: 0px 16px;
+    color: var(--title-color);
+    position: relative;
+    transition: .4s;                /* efekt geçiş süresini 0.4 sn olarak ayarladım. */
+}
+
+.btn__share {                       /* Share butonu için gerekli css kodları */
+    position: absolute;             /* absolute ile normal belge akışından çıkardım. Diğer elemanlar bunun yer kapladığını düşünmezler. */
+    bottom: 29px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.social__share {                    /* social share buttonu olarak adlandırılan butonun css düzenlemeleri !! sadece boyut düzenlemesi yapıldı. */
+    font-size: 24px;
+}
+
+.nav__toggle {
+    height: 32px;
+    width: 36px;
+    cursor: pointer;
+    position: fixed;
+    right: 24px;
+    top: 32px;
+    font-size: 19px;
+    border-radius: 4px;
+    background-color: var(--skin-color);
+    color: var(--title-color);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__close {
+    font-size: 24px;
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Active Link */
+.nav__link.active-link, .nav__link:hover {
+    color: var(--skin-color);       /* Sayfaların üzerine geldiğinde renk değişimini sağladım. */
+}
+
+.nav__link.active-link::after, .nav__link:hover::after { 
+    position: absolute;             /* Burada sayfalar altında çıkacak olan nokta işaretinini css kodları yazıldı */                        
+    content: ''; 
+    width: 6px;
+    height: 6px;
+    background-color: var(--skin-color);
+    border-radius: 50%;
+    bottom: 29px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+/*=============== MAIN ===============*/
+.main {
+    margin-left: 100px;
+}
+
+/*===== Home Section =====*/
+.home {
+    background: url('../img/IMG_20230902_144217-Photoroom.jpg');
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+}
+
+.home__container {
+    position: relative;
+    height: 100%;
+    align-items: center;
+}
+
+.home__social {
+    position: absolute;
+    top: 29px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    column-gap: 56px;
+}
+
+.home__social-follow {
+    font-weight: var(--font-medium);
+    position: relative;
+}
+
+.home__social-follow::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    background-color: var(--text-color);
+    right: -45%;
+    top: 50%;
+}
+
+.home__social-links {
+    display: inline-flex;
+    column-gap: 16px;
+}
+
+.home__social-link {
+    font-size: 17px;
+    color: var(--text-color);
+}
+
+.home__social-link:hover {
+    transform: translateY(4px);       /* Sosyal medya linklerinin üstüne gelince y ekseninde 4px kayma animasyonu verdim. */
+}
+
+.home__img {
+    display: none;
+}
+
+.home__title {
+    font-size: var(--biggest-font-size);
+}
+
+.home__subtitle {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb-0-75);
+}
+
+.home__description {
+    max-width: 450px;
+    margin-bottom: var(--mb-2);
+}
+
+.my__info {
+    display: flex;
+    column-gap: 29px;
+    position: absolute;
+    left: 0;
+    bottom: 29px;
+}
+
+.info__item {
+    display: flex;
+    align-items: center;
+}
+
+.info__title,
+.info__subtitle {
+    font-size: var(--small-font-size);
+}
+
+.info__title {
+    font-weight: var(--font-medium);
+}
+
+.info__icon {
+    font-size: 29px;
+    color: var(--skin-color);
+    margin-right: var(--mb-0-75);
+}
+/*===== Buttons =====*/
+.button {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 8px;
+    background-color: var(--skin-color);
+    color: var(--title-color);
+    padding: 12px 22px;
+    border-radius: 4px;
+    font-weight: var(--font-medium);
+    position: relative;
+    z-index: 1;           /* Üst üste yığılma 1 olarak ayarlandı */
+}
+
+.button::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #343a40;
+    z-index: -1;
+    transform-origin: center;
+    transform: scale(0);
+    border-radius: 4px;
+    transition: .3s;
+}
+
+.button:hover::after {                   /* Hover fare ile buton üzerine gelme durumu */
+    transform: scale(1);
+}
+
+.button__icon {
+    font-size: 20px;
+}
+
+/*===== About Section =====*/
+.about__container {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 64px;
+    align-items: center;
+}
+
+.about__img {
+    width: max-content;
+    border-radius: 12px;
+    justify-self: center;
+    padding-left: 150px;
+}
+
+.about__heading {
+    font-size: var(--h3-font-size);
+    margin-bottom: var(--mb-0-75);
+}
+
+.about__bioIntro,
+.about__bioDetails {
+    text-align: justify;
+    padding-right: 92px;
+    margin-bottom: var(--mb-2);
+}
+
+.about__info {
+    grid-template-columns: repeat(3, 140px);
+    column-gap: 8px;
+    padding: 12px;
+    margin-bottom: var(--mb-3);
+}
+
+.about__box {
+    text-align: center;
+    border-radius: 4px;
+    padding: 16px 20px;
+    background-color: var(--box-color);
+}
+
+.about__icon {
+    font-size: 24px;
+    color: var(--skin-color);
+    margin-bottom: var(--mb-0-75);
+}
+
+.about__title {
+    font-size: var(--small-font-size);
+}
+
+.about__subtitle {
+    font-size: var(--small-font-size);
+}
+
+
+
+/*===== Project Section =====*/
+.projects__container {
+    grid-template-columns: repeat(3, 425px);
+    gap: 29px;
+    padding-top: 16px;
+    padding-left: 200px;
+}
+
+.projects__filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 12px;
+    margin-bottom: 32px;
+}
+
+.projects__item {
+    cursor: pointer;
+    color: var(--title-color);
+    padding: 4px 12px;
+    font-weight: var(--font-medium);
+    border-radius: 12px;
+}
+
+.projects__card{
+    background-color: var(--box-color);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.portfolio__item-details {
+    display: none;
+}
+
+.projects__img {
+    border-radius: 8px;
+    margin-bottom: var(--mb-1);
+}
+
+.projects__title {
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb-1);
+}
+
+.projects__button {
+    color: var(--skin-color);
+    font-size: var(--small-font-size);
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+    cursor: pointer;
+}
+
+.projects__button-icon {
+    font-size: 16px;
+    transition: .3s;
+}
+
+.projects__button:hover .projects__button-icon {
+    transform: translateX(4px);
+}
+/* Active Item Work */
+.active-projects {
+    background-color: var(--skin-color);
+    color: var(--title-color);
+}
+
+/* Portfolio Popup */
+.portfolio__popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16px;
+    z-index: var(--z-modal);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+}
+
+.portfolio__popup.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.portfolio__popup-inner {
+    background-color: var(--box-color);
+    width: 900px;
+    border-radius: 8px;
+    padding: 40px;
+    position: relative;
+}
+
+.portfolio__popup-content {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    column-gap: 48px;
+}
+
+.portfolio__popup-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-size: 24px;
+    color: var(--skin-color);
+    cursor: pointer;
+}
+
+.portfolio__popup-img {
+    border-radius: 8px;
+}
+
+.portfolio__popup-subtitle {
+    font-size: var(--small-font-size);
+    margin-bottom: var(--mb-0-75);
+}
+
+.details__title {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb-1);
+}
+
+.details__description {
+    font-size: var(--small-font-size);
+    margin-bottom: var(--mb-2)
+}
+
+.details__info li {
+    margin-bottom: var(--mb-0-75);
+    text-transform: capitalize;
+}
+
+.details__info li:last-child {
+    margin-bottom: 0;
+}
+
+.details__info li span {
+    font-weight: normal;
+}
+
+.details__info li a {
+    text-transform: lowercase;
+    color: var(--skin-color);
+}
+
+
+/*===== Contact Section =====*/
+.contact__container {
+    grid-template-columns: 300px 340px;
+    column-gap: 48px;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact__info {
+    display: grid;
+    row-gap: 16px;
+}
+
+.contact__card {
+    background-color: var(--box-color);
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.contact__card-icon {
+    font-size: 29px;
+    color: var(--title-color);
+    margin-bottom: var(--mb-0-25);
+}
+
+.contact__card-title,
+.contact__card-data {
+    font-size: var(--small-font-size);
+}
+
+.contact__card-title {
+    font-weight: var(--font-medium);
+}
+
+.contact__card-data {
+    display: block;
+    margin-bottom: var(--mb-0-75);
+}
+
+.contact__button {
+    color: var(--skin-color);
+    font-size: var(--small-font-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 4px;
+    cursor: pointer;
+}
+
+.contact__button-icon {
+    font-size: 16px;
+    transition: .3s;
+}
+
+.contact__button:hover .contact__button-icon {
+    transform: translateX(4px);
+}
+
+.input__container {
+    position: relative;
+    margin-top: 2px;
+    margin-bottom: 30px;
+}
+
+.input {
+    width: 100%;
+    border: 2px solid var(--text-color);
+    background-color: transparent;
+    padding: 10px 19px;
+    color: var(--title-color);
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    letter-spacing: .5px;
+    border-radius: 8px;
+    transition: .3s;
+}
+
+textarea.input {
+    padding: 12px 20px;
+    min-height: 140px;
+    border-radius: 8px;
+    resize: none;
+}
+
+.error-message {
+    color: white;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    display: block;
+}
+
+
+@media screen and (max-width: 768px) {
+    .about__img {
+        width: 250px;
+    }
+
+    .projects__container {
+        grid-template-columns: 330px;
+    }
+
+    .portfolio__popup-inner {
+        width: 420px;
+        padding: 45px 24px 40px;
+    }
+
+    .portfolio__popup-content {
+        grid-template-columns: 1fr;
+        row-gap: 25px;
+    }
+
+    .details__title {
+        font-size: var(--normal-font-size);
+    }
+
+    .portfolio__popup-close {
+        top: 8px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .nav__toggle {
+        right: initial;
+        left: 24px;
+    }
+
+    .home {
+        background-image: none;
+        height: initial;
+        align-items: initial;
+        padding: 7rem 0 2rem;
+    }
+
+    .home__container {
+        row-gap: 32px;
+    }
+
+    .home__img {
+        display: block;
+        width: 250px;
+        justify-content: center;
+    }
+
+    .home__social {
+        left: initial;
+        right: -16px;
+        flex-direction: column;
+        row-gap: 56px;
+    }
+
+    .home__social-follow {
+        font-size: var(--smaller-font-size);
+        transform: rotate(90deg);
+    }
+
+    .home__social-links {
+        flex-direction: column;
+        row-gap: 4px;
+    }
+
+    .home__social-link {
+        font-size: var(--normal-font-size);
+    }
+
+    .about__info{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .about__bioDetails,
+    .about__bioIntro {
+        padding: 0;
+    }
+
+    .projects__container,
+    .contact__container {
+        grid-template-columns: 300px;
+    }
+
+    .my__info {
+        display: none;
+    }
+}
+

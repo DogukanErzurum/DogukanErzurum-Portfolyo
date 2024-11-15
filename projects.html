@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Projelerim</title>
+</head>
+<body>
+
+    <!--========== SIDEBAR ==========-->
+    <div class="nav__toggle" id="nav-toggle">
+        <i class="uil uil-bars"></i>     
+    </div>
+    <aside class="sidebar" id="sidebar">
+        <nav class="nav">
+            <div class="nav__logo">
+                <a href="index.html" class="nav__logo-text">D</a>
+            </div>
+
+            <div class="nav__menu">
+                <div class="menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="index.html" class="nav__link active-link">Anasayfa</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="about.html" class="nav__link">Hakkımda</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="projects.html" class="nav__link">Projelerim</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="contact.html" class="nav__link">İletişim</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="btn__share">
+                <i class="uil uil-share-alt social__share"></i>
+            </div>
+
+            <div class="nav__close" id="nav-close">
+                <i class="uil uil-times"></i>
+            </div>
+        </nav>
+    </aside>
+
+    <main class="main">
+        <section class="projects section" id="projects">
+            <h2 data-heading="Benim" class="section__title">Projelerim</h2>
+
+            <div class="projects__filters">
+                <span class="projects__item active-projects">Tümü</span>
+                <span class="projects__item">Web</span>
+                <span class="projects__item">Cisco</span>
+                <span class="projects__item">App</span>
+            </div>
+
+            <div class="projects__container container grid">
+                <div class="projects__card web">
+                    <img src="assets/img/finans.jpg" alt="" class="projects__img">
+                    <h3 class="projects__title">Finans Takibi</h3>
+                    <span class="projects__button">İncele
+                        <i class="uil uil-arrow-right projects__button-icon"></i>
+                    </span>
+                    <div class="portfolio__item-details">
+                        <h3 class="details__title"></h3>
+                        <p class="details__description">Kişisel finans yönetimi uygulaması ile gelir ve gider takibini kolaylaştırırken, işlemleri kategorilere ayırıp farklı hesaplara atama yapabiliyoruz. Plaid entegrasyonu ile banka hesapları bağlanarak tüm finansal verilerin tek bir platformda toplanması sağlanıyor. Uygulamada etkileşimli finansal gösterge paneli, özelleştirilebilir grafikler, tarih ve hesap bazlı filtreleme, işlem ekleme formu, gelir-gider geçişi, toplu silme ve arama özellikleri bulunuyor. Hono.js tabanlı API, Tanstack React Query ile güçlü durum yönetimi, Clerk ile güvenli kimlik doğrulama ve TailwindCSS ile modern bir tasarıma sahip. Next.js 14 ve Drizzle ORM ile desteklenen bu proje, kullanıcı dostu bir finansal deneyim sunmayı amaçlamaktadır.</p>
+                        <ul class="details__info">
+                            <li>Tamamlandı - <span>27 Ekim 2024</span></li>
+                            <li>Teknolojiler - <span>Bulk tailwindcss hooks-api-react honojs shadcn-ui drizzle-orm nextjs14</span></li>
+                            <li>Rolüm - <span>FullStack Developer</span></li>
+                            <li>Görüntüle - <span><a href="https://github.com/DogukanErzurum/finance">www.github.com</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="projects__card web">
+                    <img src="assets/img/traversal.jpg" alt="" class="projects__img">
+                    <h3 class="projects__title">Traversal Projesi</h3>
+                    <span class="projects__button">İncele
+                        <i class="uil uil-arrow-right projects__button-icon"></i>
+                    </span>
+                    <div class="portfolio__item-details">
+                        <h3 class="details__title">Traversal Projects</h3>
+                        <p class="details__description"> Bu projede Model-View-Controller Yapısı, View Components Yapısı, N-Tier Design Pattern, Repository Design Pattern, Authorization, Fluent Validation, Ajax, API, CQRS Design Pattern ve SignalR gibi birçok konuda kendimi geliştirme fırsatı buldum.</p>
+                        <ul class="details__info">
+                            <li>Tamamlandı - <span>31 Mayıs 2023</span></li>
+                            <li>Teknolojiler - <span>.Net Model-View-Controller Design Pattern CQRS</span></li>
+                            <li>Rolüm - <span>FullStack Developer</span></li>
+                            <li>Görüntüle - <span><a href="https://github.com/DogukanErzurum/TraversalCoreProje">www.github.com</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="projects__card web">
+                    <img src="assets/img/netflix.jpg" alt="" class="projects__img">
+                    <h3 class="projects__title">Netflix Clone</h3>
+                    <span class="projects__button">İncele
+                        <i class="uil uil-arrow-right projects__button-icon"></i>
+                    </span>
+                    <div class="portfolio__item-details">
+                        <h3 class="details__title">Netflix Clone</h3>
+                        <p class="details__description">Bu projeyi yapmak için alt yapı olarak React, TailwindCSS ve prisma kullandım. Proje google ve github ile bağlantılı olarak yapıldı. bu sayede sisteme kayıt olmak isteyen kişi google ve github hesabı ile kayıt olabiliyor. Ayrıca sistemin kendine ait bir kayıt ekranı da bulunmakta. MongoDB ve Prisma bağlantısı ile bir veritabanı oluşturdum. TailwindCSS sayesinde detay odaklı efekt ve animasyonlar yaptım. React SWR sayesinde veri getirme işlemi yaptım. </p>
+                        <ul class="details__info">
+                            <li>Tamamlandı - <span>30 Ağustos 2023</span></li>
+                            <li>Teknolojiler - <span>React NextJs TailwindCss Prisma React SWR MongoDB</span></li>
+                            <li>Rolüm - <span>FullStack Developer</span></li>
+                            <li>Görüntüle - <span><a href="https://github.com/DogukanErzurum/netflix-clone">www.github.com</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="projects__card web">
+                    <img src="assets/img/airbnb.jpg" alt="" class="projects__img">
+                    <h3 class="projects__title">Airbnb CLone</h3>
+                    <span class="projects__button">İncele
+                        <i class="uil uil-arrow-right projects__button-icon"></i>
+                    </span>
+                    <div class="portfolio__item-details">
+                        <h3 class="details__title">Airbnb Clone</h3>
+                        <p class="details__description">Bu proje, Tailwind CSS ile modern bir tasarıma sahip, tam duyarlılık destekli bir Airbnb Klonu uygulamasıdır. Kullanıcılar, Google ve Github kimlik doğrulamalarıyla güvenli bir şekilde giriş yapabilirler. Cloudinary CDN ile görüntü yüklemeleri optimize edilirken, react-hook-form ile istemci form doğrulama ve işleme sağlanmıştır. react-toast ile sunucu hataları işlenir. kategori, tarih aralığı, harita konumu, misafir sayısı, oda ve banyo sayısı gibi filtreleme seçenekleri sunar. Ayrıca, rezervasyon sistemleri, favori listeler ve paylaşılabilir URL filtreleri gibi özellikler uygulamaya entegre edilmiştir. Bu da projeyi gerçeğinden ayırt edilemez hale getirmiştir. </p>
+                        <ul class="details__info">
+                            <li>Tamamlandı - <span>9 Şubat 2024</span></li>
+                            <li>Teknolojiler - <span>React NextJs TailwindCss Google ve Github kimlik doğrulaması, Cloudinary CDN, react-hook, react-toast</span></li>
+                            <li>Rolüm - <span>FullStack Developer</span></li>
+                            <li>Görüntüle - <span><a href="https://github.com/DogukanErzurum/airbnb-clone">www.domain.com</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="projects__card cisco">
+                    <img src="assets/img/snmp.jpg" alt="" class="projects__img">
+                    <h3 class="projects__title">Snmp Monitörleme</h3>
+                    <span class="projects__button">İncele
+                        <i class="uil uil-arrow-right projects__button-icon"></i>
+                    </span>
+                    <div class="portfolio__item-details">
+                        <h3 class="details__title">Snmp Monitöring</h3>
+                        <p class="details__description">Bu proje SNMP kullanarak aynı ağ üzerinde ki cihazların bilgilerini OİD değerleri ile sorgulamak için geliştirilmiş bir GUI projesidir. Kullanıcı sorgulama yapmak istediği IP adresini girdikten sonra ekran üzerinde 3 adet OID değerini sorgulamaya yarayan sorgu panelleri karşılamaktadır. Ayrıca ihtiyaca göre sorgu paneli eklemek isterse + işareti ile yeni sorgu panelleri ekleyebilir ve X işareti ile de sorgu panelini silebilmektedir. Bu sayede kullanıcıya dinamik ve kullanışlı bir Kontrol monitörü sağlanmış olur. Ayrıca menü içerisinde ki liste butonu ile de bir txt dosyası açılmaktadır ve bu dosya içerisine de sorgulama yapabileceği çeşitli OID değerlerini bir not defteri gibi kaydedebilir.</p>
+                        <ul class="details__info">
+                            <li>Tamamlandı - <span>6 Eylül 2024</span></li>
+                            <li>Teknolojiler - <span>Snmp, Cisco, Mib, OID</span></li>
+                            <li>Rolüm - <span>FullStack Developer</span></li>
+                            <li>Görüntüle - <span><a href="#">www.github.com</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="projects__card app">
+                    <img src="assets/img/personel.jpg" alt="" class="projects__img">
+                    <h3 class="projects__title">Personel Takip Sistemi</h3>
+                    <span class="projects__button">İncele
+                        <i class="uil uil-arrow-right projects__button-icon"></i>
+                    </span>
+                    <div class="portfolio__item-details">
+                        <h3 class="details__title">Personel Takip Sistemi</h3>
+                        <p class="details__description">Projem bir Personel Takip Otomasyonudur. Sql database bağlantısı kullanılarak C# dilinde Windows formları kullanılarak yapılmıştır. Uygulamaya giriş yapılabilmesi için Yeni kullanıcı kaydı ve Kullanıcı girişi yapılabilir. Ayrıca şifrenin unutulması durumunda şifre sıfırlama ekranından yeni şifre oluşturabilirsiniz. Ofis veya şirket bünyesinde ki departmanlar eklenebilir bu departmanlara yeni personel ataması yapılabilir yada kayıtlı personelin departmanını değiştirebilirsiniz.</p>
+                        <ul class="details__info">
+                            <li>Tamamlandı - <span>10 Haziran 2022</span></li>
+                            <li>Teknolojiler - <span>Visual Studio, C#</span></li>
+                            <li>Rolüm - <span>FullStack Developer</span></li>
+                            <li>Görüntüle - <span><a href="#">www.github.com</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="projects__card web">
+                    <img src="assets/img/login.jpg" alt="" class="projects__img">
+                    <h3 class="projects__title">Login Ekranı Tasarımı</h3>
+                    <span class="projects__button">İncele
+                        <i class="uil uil-arrow-right projects__button-icon"></i>
+                    </span>
+                    <div class="portfolio__item-details">
+                        <h3 class="details__title">Login Ekranı Tasarımı</h3>
+                        <p class="details__description">Bu proje, ihtiyaçlara göre özelleştirilmiş ve çeşitli projelere entegre edilerek kullanıma sunulmuştur. em mobil hem de masaüstü cihazlarda kullanılmak üzere responsive olarak tasarlanmıştır.</p>
+                        <ul class="details__info">
+                            <li>Tamamlandı - <span>5 Aralık 2023</span></li>
+                            <li>Teknolojiler - <span>CSS HTML SCSS</span></li>
+                            <li>Rolüm - <span>FullStack Developer</span></li>
+                            <li>Görüntüle - <span><a href="https://github.com/DogukanErzurum/Login-1">www.github.com</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="projects__card web">
+                    <img src="assets/img/react-login.jpg" alt="" class="projects__img">
+                    <h3 class="projects__title">React Login Ekranı</h3>
+                    <span class="projects__button">İncele
+                        <i class="uil uil-arrow-right projects__button-icon"></i>
+                    </span>
+                    <div class="portfolio__item-details">
+                        <h3 class="details__title">React Login Ekranı</h3>
+                        <p class="details__description">Bu proje, ihtiyaçlara göre özelleştirilmiş ve çeşitli projelere entegre edilerek kullanıma sunulmuştur. Hem mobil hem de masaüstü cihazlarda kullanılmak üzere responsive olarak tasarlanmıştır</p>
+                        <ul class="details__info">
+                            <li>Tamamlandı - <span>7 Aralık 2023</span></li>
+                            <li>Teknolojiler - <span>React NextJs CSS Javascript HTML</span></li>
+                            <li>Rolüm - <span>FullStack Developer</span></li>
+                            <li>Görüntüle - <span><a href="https://github.com/DogukanErzurum/login-form-react">www.github.com</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="projects__card web">
+                    <img src="assets/img/ödeme.jpg" alt="" class="projects__img">
+                    <h3 class="projects__title">React Fiyat Bileşeni</h3>
+                    <span class="projects__button">İncele
+                        <i class="uil uil-arrow-right projects__button-icon"></i>
+                    </span>
+                    <div class="portfolio__item-details">
+                        <h3 class="details__title"></h3>
+                        <p class="details__description">Bu proje, ihtiyaçlara göre özelleştirilmiş ve çeşitli projelere entegre edilerek kullanıma sunulmuştur. Hem mobil hem de masaüstü cihazlarda kullanılmak üzere responsive olarak tasarlanmıştır</p>
+                        <ul class="details__info">
+                            <li>Tamamlandı - <span>12 Aralık 2023</span></li>
+                            <li>Teknolojiler - <span>React NextJs TailwindCss</span></li>
+                            <li>Rolüm - <span>FullStack Developer</span></li>
+                            <li>Görüntüle - <span><a href="https://github.com/DogukanErzurum/React-Pricing-Component">www.github.com</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="projects__card web">
+                    <img src="assets/img/admin.jpg" alt="" class="projects__img">
+                    <h3 class="projects__title">React Admin Dashboaard</h3>
+                    <span class="projects__button">İncele
+                        <i class="uil uil-arrow-right projects__button-icon"></i>
+                    </span>
+                    <div class="portfolio__item-details">
+                        <h3 class="details__title">React Admin Dashboaard</h3>
+                        <p class="details__description">Bu proje, ihtiyaçlara göre özelleştirilmiş ve çeşitli projelere entegre edilerek kullanıma sunulmuştur. Hem mobil hem de masaüstü cihazlarda kullanılmak üzere responsive olarak tasarlanmıştır</p>
+                        <ul class="details__info">
+                            <li>Tamamlandı - <span>20 Aralık 2023</span></li>
+                            <li>Teknolojiler - <span>React NextJs TailwindCss</span></li>
+                            <li>Rolüm - <span>FullStack Developer</span></li>
+                            <li>Görüntüle - <span><a href="https://github.com/DogukanErzurum/React-Admin-Dashboard">www.github.com</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="projects__card web">
+                    <img src="assets/img/eticaret.jpg" alt="" class="projects__img">
+                    <h3 class="projects__title">E-Ticaret Sitesi</h3>
+                    <span class="projects__button">İncele
+                        <i class="uil uil-arrow-right projects__button-icon"></i>
+                    </span>
+                    <div class="portfolio__item-details">
+                        <h3 class="details__title">E-Ticaret Sitesi</h3>
+                        <p class="details__description">Bu projede, sorunsuz gezinme ve kullanıcı deneyimine sahip Yönetici Panosu ile tamamen işlevsel bir E-Ticaret oluşturmak için Next.js 13 App Router'ı kullandım.</p>
+                        <ul class="details__info">
+                            <li>Tamamlandı - <span>10 Ocak 2024</span></li>
+                            <li>Teknolojiler - <span>React NextJs TailwindCss</span></li>
+                            <li>Rolüm - <span>FullStack Developer</span></li>
+                            <li>Görüntüle - <span><a href="https://github.com/DogukanErzurum/ecommerce-admin">www.github.com</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="projects__card cisco">
+                    <img src="assets/img/cisco.jpg" alt="" class="projects__img">
+                    <h3 class="projects__title">Voıp dial-peer</h3>
+                    <span class="projects__button">İncele
+                        <i class="uil uil-arrow-right projects__button-icon"></i>
+                    </span>
+                    <div class="portfolio__item-details">
+                        <h3 class="details__title">Voıp dial-peer</h3>
+                        <p class="details__description">Cisco ağında VoIP için dial-peer yapılandırması projesidir. Bu proje de VoIP çağrılarının IP adreslerine göre nasıl yönlendirileceğini belirlemek için dial-peer kavramını detaylandırdım ve router'da yapılandırdım. Öncelikle POTS ve VoIP dial-peer türlerini inceledim ve ardından, belirli numara desenlerine göre çağrıları yönlendirecek yapılandırmaları yaptım.</p>
+                        <ul class="details__info">
+                            <li>Tamamlandı - <span>30 Ekim 2024</span></li>
+                            <li>Teknolojiler - <span>Cisco VoIP Dial peer</span></li>
+                            <li>Rolüm - <span>FullStack Developer</span></li>
+                            <li>Görüntüle - <span><a href="https://github.com/DogukanErzurum/Dial-Peer-VoIP">www.github.com</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="portfolio__popup">
+            <div class="portfolio__popup-inner">
+                <div class="portfolio__popup-content grid">
+                    <span class="portfolio__popup-close"><i class="uil uil-times"></i></span>
+                    <div class="pp__thumbnail">
+                        <img src="assets/img/airbnb.jpg" alt="" class="portfolio__popup-img">
+                    </div>
+                    <div class="portfolio__popup-info">
+                        <div class="portfolio__popup-subtitle">Öne Çıkanlar - <span>Web</span></div>
+                        <div class="portfolio__popup-body">
+                            <h3 class="projects__title">Airbnb Clone</h3>
+                    <span class="projects__button">İncele
+                        <i class="uil uil-arrow-right projects__button-icon"></i>
+                    </span>
+                    <div class="portfolio__item-details">
+                        <h3 class="details__title">Airbnb sitesinin birebir klon olarak geliştirilmiş hali</h3>
+                        <p class="details__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci sed doloribus quos iusto vero! Quisquam ab, eius fuga eligendi labore porro voluptate quod aperiam neque illum ullam modi nemo nihil?</p>
+                        <ul class="details__info">
+                            <li>Tamamlandı - <span>4 Aralık 2023</span></li>
+                            <li>Teknolojiler - <span>React NextJs TailwindCss</span></li>
+                            <li>Rolüm - <span>FullStack Developer</span></li>
+                            <li>Görüntüle - <span><a href="https://github.com/DogukanErzurum/airbnb-clone">www.github.com</a></span></li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Scriptler -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
