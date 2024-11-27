@@ -1,7 +1,7 @@
 /* Saat */
 function updateClock() {
     const clock = document.getElementById('clock');
-    if (clock) { // Elementin mevcut olup olmadığını kontrol edin
+    if (clock) { 
         const now = new Date();
         const hours = now.getHours().toString().padStart(2, '0');
         const minutes = now.getMinutes().toString().padStart(2, '0');
@@ -61,7 +61,7 @@ function portfolioItemDetails(portfolioItem) {
     const subtitle = document.querySelector(".portfolio__popup-subtitle span");
     const body = document.querySelector(".portfolio__popup-body");
 
-    if (thumbnail && subtitle && body) { // Elementlerin varlığını kontrol edin
+    if (thumbnail && subtitle && body) { 
         thumbnail.src = portfolioItem.querySelector(".projects__img").src;
         subtitle.innerHTML = portfolioItem.querySelector(".projects__title").innerHTML;
         body.innerHTML = portfolioItem.querySelector(".portfolio__item-details").innerHTML;
@@ -93,7 +93,7 @@ function contactControl() {
     var email = document.getElementById("email").value.trim();
     var message = document.getElementById("message").value.trim();
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    var nameRegex = /^[a-zA-ZğüşöçıİĞÜŞÖÇ\s]+$/; // İsim doğrulama için eksik olan regex eklendi
+    var nameRegex = /^[a-zA-ZğüşöçıİĞÜŞÖÇ\s]+$/; 
 
     if (!name || !email || !message) {
         alert("Lütfen tüm alanları doldurun.");
